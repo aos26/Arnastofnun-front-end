@@ -23,7 +23,6 @@ export default function Word() {
     /*axios.get('http://127.0.0.1:5000/words/5')
             .then(res => {
                 const newWords = res.data.map(obj => obj);
-                
                 setWords(newWords);
             })
             .catch(err => console.log(err));*/
