@@ -7,7 +7,6 @@ import { shuffle, capitalize } from "./components/Helpers/Helpers";
 
 export default function Word() {
   const [words, setWords] = useState([]);
-  //const words = [];
 
   useEffect(() => {
     axios
