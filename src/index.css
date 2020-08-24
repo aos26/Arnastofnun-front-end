@@ -56,3 +56,10 @@ body {
   margin-bottom: 15px;
   min-height: 50px;
 }
+.flexbox .board .card:hover {
+  background-color: gray; /*Breyta um lit hér...*/
+}
+
+.questions {
+  opacity: 1; /* ÞARF AÐ GERA AUGLJÓST AÐ ORÐINN EIGA EKKI AÐ VERA DRAGGABLE */
+}

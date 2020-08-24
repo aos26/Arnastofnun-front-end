@@ -1,12 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import Score from "./components/layout/Score";
 import Board from "./components/layout/Board";
 import Card from "./components/layout/Card";
 import { shuffle, capitalize } from "./components/Helpers/Helpers";
 
+
 export default function Word() {
   const [words, setWords] = useState([]);
+  const [rightAnswer, setRightAnswer] = useState(0);
+  const [wrongAnswer, setWrongAnswer] = useState(0);
+  const [time, setTime] = useState(0);
+  
+
+  const addScore = useCallback(
+    () => {
+      setRightAnswer(rightAnswer + 1);
+    },
+    [],
+  );
+
+  const addWrongScore = useCallback(
+    () => {
+      setWrongAnswer(wrongAnswer + 1);
+    },
+    [],
+  );
 
   useEffect(() => {
     axios
@@ -30,12 +49,24 @@ export default function Word() {
 
   return (
     <div className="container">
-      <Score />
+      <div className="container">
+                <div className="row">
+                    <div className="col">
+                    Rétt svör: {rightAnswer}
+                    </div>
+                    <div className="col">
+                    Röng svör: {wrongAnswer}
+                    </div>
+                    <div className="col">
+                    Tími: {time}
+                    </div>
+                </div>
+            </div>
       <div className="flexbox">
         <div className="row">
           <div className="col">
             <h3>Orð</h3>
-            <div className="board">
+            <div className="board questions">
               {words.map((ord, i) => (
                 <div className="wordCard" id={"ord" + ord.id} key={ord.id}>
                   <div>
@@ -54,6 +85,8 @@ export default function Word() {
                   id={ord.flid}
                   ord={{ ord }}
                   className="board oneCard"
+                  addScore={addScore}
+                  addWrongScore={addWrongScore}
                 >
                   <p className="bulletNumber text-white">{i + 1}</p>
                 </Board>
