@@ -60,6 +60,14 @@ body {
   background-color: gray; /*Breyta um lit hér...*/
 }
 
+.current {
+  background-color: yellow !important;
+}
+
 .questions {
   opacity: 1; /* ÞARF AÐ GERA AUGLJÓST AÐ ORÐINN EIGA EKKI AÐ VERA DRAGGABLE */
+}
+
+ .flexbox .skyringar .board {
+  margin-bottom: 0px !important;
 }
