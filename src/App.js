@@ -5,6 +5,7 @@ import Header from './components/layout/Header';
 import MainMenu from './MainMenu';
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
+import About from './About';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <div className="container mx-auto">
             <Route path="/game" exact component={Word} />
             <Route path="/" exact component={MainMenu} />
+            <Route path="/about" exact component={About} />
           </div>
         </div>
       </Router>

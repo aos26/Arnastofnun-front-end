@@ -6,13 +6,10 @@ export default function MainMenu() {
             <div className="row">
                 <div className="menu col">
                     <div className="menuItem">
-                        <a href="/game">Spila</a>
+                        <a href="/game" class="btn btn-info btn-lg">Spila</a>
                     </div>
                     <div className="menuItem">
-                        <a href="/">Stillingar (TBD)</a>
-                    </div>
-                    <div className="menuItem">
-                        <a href="/">Um leikinn (TBD)</a>
+                        <a href="/about" class="btn btn-info btn-lg">Um leikinn (TBD)</a>
                     </div>
                 </div>
             </div>

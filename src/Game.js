@@ -63,7 +63,7 @@ export default function Word() {
       const totalAnswers = wrongAnswer + rightAnswer + 1;
       console.log(totalAnswers)
       console.log(5 % totalAnswers)
-      if (5 % totalAnswers === 0 && totalAnswers >= 5) {
+      if (totalAnswers % 5 === 0 && totalAnswers >= 5) {
         resetGame();
       }
     }
@@ -71,7 +71,7 @@ export default function Word() {
 
   const getListStyle = (isDraggingOver, i) => (
     {
-      background: isDraggingOver ? "gray" : "#313131",
+      background: isDraggingOver ? "gray" : "#3CA5C5",
       padding: 15,
       width: "100%",
       maxWidth: 300,
