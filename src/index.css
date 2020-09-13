@@ -161,6 +161,11 @@ body {
   .menu {
     margin-top: 150px;
   }
+
+  .container {
+    padding-left: 25px;
+    padding-right: 20px;
+  }
 }
 
 .menuItem {
