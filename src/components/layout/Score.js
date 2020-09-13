@@ -11,6 +11,11 @@ export default class Score extends React.Component {
             time: "TBD"
         };
     }
+    addScore = () => {
+        this.setState({
+            rightAnswer: this.state.rightAnswer + 1
+        })
+    }
     
     render() {
         return (

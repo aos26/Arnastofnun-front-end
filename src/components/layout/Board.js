@@ -1,49 +1,51 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useDrop } from 'react-dnd'
+import { ItemTypes } from '../Helpers/items'
+import { CardContext } from '../../Game'
 
 function Board(props) {
     
-    const drop = e => {
-        e.preventDefault();
-        const card_id = e.dataTransfer.getData('card_id');
-        if(e.currentTarget.style.backgroundColor == 'red') { //Athuga hvort það sé búið að svara vitlaust á Board
-            const card = document.getElementById(card_id);
-            card.style.display = 'block';
-            document.getElementById('board-0').appendChild(card);
-        } else if(e.currentTarget.childNodes.length == 2){ //Athuga hvort það sé komið rétt svar í Board
-            const card = document.getElementById(card_id);
-            card.style.display = 'block';
-            document.getElementById('board-0').appendChild(card);
-        } 
-        else if(props.ord.ord.id == card_id){ // Athuga hvort orðið sé rétt
-            const card = document.getElementById(card_id);
-            card.style.display = 'block';
-            card.style.backgroundColor = 'green';
-            const wordCard = document.getElementById('ord' + props.ord.ord.id);
-            wordCard.style.backgroundColor = 'green';
-            e.target.appendChild(card);
-        } else { // Ef það er ekki rétt þá merkjum við Board rauðan
-            const card = document.getElementById(card_id);
-            card.style.display = 'block';
-            
-            e.currentTarget.style.backgroundColor = 'red';
-
-            const wordCard = document.getElementById('ord' + props.ord.ord.id);
-            wordCard.style.backgroundColor = 'red';
-            document.getElementById('board-0').appendChild(card);
-        }
-        
+    /*const { checkIfRight } = useContext(CardContext);
+    let boardId
+    if(props.ord){
+        boardId = props.ord.ord.id;
     }
+    const [{isOver}, drop] = useDrop({
+        accept: ItemTypes.CARD,
+        drop: (item, monitor)=> checkIfRight(item.id, boardId),
+        collect: monitor => ({
+            isOver: !!monitor.isOver(),
+        }),
+        <Board
+                    key={ord.id}
+                    id={ord.flid}
+                    ord={{ ord }}
+                    className="board oneCard"
+                    addScore={addScore}
+                    addWrongScore={addWrongScore}
+                  >
+                    <p className="bulletNumber text-white">{i + 1}</p>
+                    {ord.isRight ?
+                      <Card
+                        id={ord.id}
+                        className="card"
+                        draggable="false"
+                        key={ord.id}
+                      >
+                        <p>{capitalize(ord.texti)}</p>
+                      </Card>
+                      : null
 
-    const dragOver = e => {
-        e.preventDefault();
-    }
+                    }
+                  </Board>
+    })*/
 
     return (
         <div 
+            //ref={drop}
             id={props.id}
             className={props.className}
-            onDrop={drop}
-            onDragOver={dragOver}
+            //style={isOver ? {backgroundColor: 'gray'} : {}}
         >
             { props.children }    
         </div>
