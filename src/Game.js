@@ -3,6 +3,9 @@ import axios from "axios";
 import { shuffle, capitalize } from "./components/Helpers/Helpers";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { reorder, move } from '../src/components/Helpers/Helpers';
+import { isMobile } from 'react-device-detect';
+import MenuIcon from "./components/layout/MenuIcon";
+
 
 export const CardContext = createContext({
   checkIfRight: null
@@ -31,7 +34,6 @@ export default function Word() {
     const [cardSource] = sourceClone.splice(source.index, 1);
     const boardId = destination.droppableId - 1;
     const cardTarget = shuffledWords[boardId];
-    console.log(cardSource, cardTarget)
 
     if (sInd === dInd) {
       const items = reorder(words[sInd], source.index, destination.index);
@@ -49,10 +51,8 @@ export default function Word() {
         newWords[dInd] = result[dInd];
         setWords(newWords);
       } else {
-        console.log('test');
         const newWrongAnswer = wrongAnswer + 1
         setWrongAnswer(newWrongAnswer);
-        console.log(answerArray)
         let newAnswerArray = [...answerArray];
         const index = dInd - 1;
         newAnswerArray[index] = true;
@@ -61,21 +61,19 @@ export default function Word() {
 
       }
       const totalAnswers = wrongAnswer + rightAnswer + 1;
-      console.log(totalAnswers)
-      console.log(5 % totalAnswers)
       if (totalAnswers % 5 === 0 && totalAnswers >= 5) {
-        resetGame();
+          resetGame();
       }
     }
   }
 
-  const getListStyle = (isDraggingOver, i) => (
+  const getListStyle = (isDraggingOver, i, isMobile) => (
     {
       background: isDraggingOver ? "gray" : "#3CA5C5",
-      padding: 15,
+      padding: isMobile ? 5 : 15,
       width: "100%",
-      maxWidth: 300,
-      minHeight: 100,
+      maxWidth: isMobile ? 200 : 300,
+      minHeight: 50,
       marginBottom: 10,
     });
 
@@ -89,7 +87,6 @@ export default function Word() {
           el.isRight = null;
         });
 
-        console.log(newWords)
         setWords([newWords, [], [], [], [], []]);
 
         const shuffledWords = JSON.parse(JSON.stringify(newWords));
@@ -112,7 +109,6 @@ export default function Word() {
           el.isRight = null;
         });
 
-        console.log(newWords)
         setWords([newWords, [], [], [], [], []]);
 
         const shuffledWords = JSON.parse(JSON.stringify(newWords));
@@ -125,20 +121,13 @@ export default function Word() {
       .catch((err) => console.log(err));
   }, []);
 
-  /*
-    const fetchWord = () => {
-      window.location.reload(false);
-      /*axios.get('http://127.0.0.1:5000/words/5')
-              .then(res => {
-                  const newWords = res.data.map(obj => obj);
-                  setWords(newWords);
-              })
-              .catch(err => console.log(err));
-  };*/
 
   return (
     <div className="container">
-      <div className="container">
+      {isMobile ? <MenuIcon /> :
+        null}
+      
+      <div className="flexbox">
         <div className="row">
           <div className="col">
             Rétt svör: {rightAnswer}
@@ -149,9 +138,7 @@ export default function Word() {
           <div className="col">
             Tími: {time}
           </div>
-        </div>
       </div>
-      <div className="flexbox">
         <div className="row">
           <div className="col">
             <h3>Orð</h3>
@@ -186,7 +173,7 @@ export default function Word() {
 
                       <div
                         ref={provided.innerRef}
-                        style={getListStyle(snapshot.isDraggingOver, i--)}
+                        style={getListStyle(snapshot.isDraggingOver, i--, isMobile)}
                         {...provided.droppableProps}
                         className={answerArray[provided.droppableProps["data-rbd-droppable-id"] - 1] ? "wrong" : "board"}
                       >
@@ -259,12 +246,7 @@ export default function Word() {
             </div>
 
           </DragDropContext>
-          <div className="row ml-1">
-            <h5>
-              Dragðu skýringu í svardálkinn hjá orðinu sem þú telur að hún eigi
-              við.
-            </h5>
-          </div>
+          
         </div>
       </div>
     </div >
