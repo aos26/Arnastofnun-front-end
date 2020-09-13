@@ -61,15 +61,15 @@ export default function Word() {
 
       }
       const totalAnswers = wrongAnswer + rightAnswer + 1;
-      if (5 % totalAnswers === 0 && totalAnswers >= 5) {
-        resetGame();
+      if (totalAnswers % 5 === 0 && totalAnswers >= 5) {
+          resetGame();
       }
     }
   }
 
   const getListStyle = (isDraggingOver, i, isMobile) => (
     {
-      background: isDraggingOver ? "gray" : "#313131",
+      background: isDraggingOver ? "gray" : "#3CA5C5",
       padding: isMobile ? 5 : 15,
       width: "100%",
       maxWidth: isMobile ? 200 : 300,

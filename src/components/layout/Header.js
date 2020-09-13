@@ -18,12 +18,12 @@ export default function Header(props) {
                         <a href="/about">Um leikinn</a>
                     </div>
                     :
-                    <nav className="navbar navbar-light bg-secondary">
-                        <a className="navbar-brand" href="/">
-                            <img src="https://www.arnastofnun.is/themes/custom/xi_arnastofnun/public/images/logo-white.png" width="40" height="30" className="d-inline-block align-top mr-1" alt="" />
+                     <nav className="navbar navbar-light" style={{ backgroundColor: "#3CA5C5" }}>
+                        <a className="navbar-brand" href="/" style={{ color: "white" }}>
+                          <img src="https://www.arnastofnun.is/themes/custom/xi_arnastofnun/public/images/logo-white.png" width="40" height="30" className="d-inline-block align-top mr-1" alt="" />
                             Leikur Árnastofnun
                         </a>
-                    </nav>
+                      </nav>
             }
         </div>
     )
