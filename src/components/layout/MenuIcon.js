@@ -7,6 +7,7 @@ export default function MenuIcon() {
     function openNav() {
         if (document.getElementById("mySidenav") !== null) {
             document.getElementById("mySidenav").style.width = "102%";
+            document.getElementById("scoreBoardId").style.display = "none";
         }
     }
 

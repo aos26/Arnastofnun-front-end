@@ -5,11 +5,10 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { reorder, move } from '../src/components/Helpers/Helpers';
 import { isMobile } from 'react-device-detect';
 import MenuIcon from "./components/layout/MenuIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
 
-
-export const CardContext = createContext({
-  checkIfRight: null
-})
 
 export default function Word() {
   const [words, setWords] = useState([]);
@@ -62,19 +61,20 @@ export default function Word() {
       }
       const totalAnswers = wrongAnswer + rightAnswer + 1;
       if (totalAnswers % 5 === 0 && totalAnswers >= 5) {
-          resetGame();
+        resetGame();
       }
     }
   }
 
   const getListStyle = (isDraggingOver, i, isMobile) => (
     {
-      background: isDraggingOver ? "gray" : "#3CA5C5",
+      background: isDraggingOver ? "#2D6FCB" : "#3CA5C5",
       padding: isMobile ? 5 : 15,
       width: "100%",
       maxWidth: isMobile ? 200 : 300,
       minHeight: 50,
       marginBottom: 10,
+      borderRadius: 3,
     });
 
   async function resetGame() {
@@ -126,32 +126,42 @@ export default function Word() {
     <div className="container">
       {isMobile ? <MenuIcon /> :
         null}
-      
+
       <div className="flexbox">
-        <div className="row">
-          <div className="col">
-            Rétt svör: {rightAnswer}
-          </div>
-          <div className="col">
-            Röng svör: {wrongAnswer}
-          </div>
-          <div className="col">
-            Tími: {time}
-          </div>
-      </div>
-        <div className="row">
-          <div className="col">
-            <h3>Orð</h3>
-          </div>
-          <div className="col">
-            <h3>Svar</h3>
-          </div>
-          <div className="col">
-            <h3>Skýringar</h3>
+        <div className="scoreBoard" id="scoreBoardId">
+          <div className="row ">
+            <div className="col">
+              <h3>
+                Rétt svör: {rightAnswer}
+              </h3>
+            </div>
+            <div className="col">
+              <h3>
+                Röng svör: {wrongAnswer}
+              </h3>
+            </div>
+            <div className="col">
+              <h3>
+                <FontAwesomeIcon icon={faStopwatch} /> Tími: {time}
+              </h3>
+            </div>
           </div>
         </div>
-        <div className="row">
-          {isLoading ? <div >Loading...</div> : null}
+        <div className="titleBoard">
+          <div className="row ">
+            <div className="col">
+              <h3>Orð</h3>
+            </div>
+            <div className="col">
+              <h3>Svar</h3>
+            </div>
+            <div className="col">
+              <h3>Skýringar</h3>
+            </div>
+          </div>
+        </div>
+        <div className="row gameBoard">
+          {isLoading ? <div className="loadingDiv">Sæki orðin <FontAwesomeIcon icon={faSpinner} spin /></div> : null}
           <div className="col">
             <div className="board questions">
               {shuffledWords.map((ord, i) => (
@@ -177,6 +187,9 @@ export default function Word() {
                         {...provided.droppableProps}
                         className={answerArray[provided.droppableProps["data-rbd-droppable-id"] - 1] ? "wrong" : "board"}
                       >
+                        <div style={{ marginTop: -5 }}>
+                          {provided.droppableProps["data-rbd-droppable-id"]}
+                        </div>
                         {ord.map((item, i) => (
                           <div
                             id={item.id}
@@ -246,7 +259,7 @@ export default function Word() {
             </div>
 
           </DragDropContext>
-          
+
         </div>
       </div>
     </div >

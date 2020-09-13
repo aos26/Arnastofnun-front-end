@@ -11,7 +11,7 @@ export default function MainMenu() {
                         <a href="/game" class="btn btn-info btn-lg">Spila</a>
                     </div>
                     <div className="menuItem">
-                        <a href="/about" class="btn btn-info btn-lg">Um leikinn (TBD)</a>
+                        <a href="/about" class="btn btn-info btn-lg">Um leikinn</a>
                     </div>
                 </div>
             </div>

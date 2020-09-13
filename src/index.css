@@ -16,7 +16,8 @@ body {
 
   overflow: hidden;
 
-  padding: 15px;
+  padding: 0 15px 15px 15px;
+
 }
 
 .flexbox .board {
@@ -32,6 +33,21 @@ body {
   min-height: 100px;
   margin-bottom: 10px;
 }
+
+.scoreBoard {
+  height: 50px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  width: 100%;
+  margin-left: -15px;
+  padding-left: 15px;
+}
+
+.titleBoard {
+  margin: 15px 0px;
+}
+
 .bulletNumber {
   margin-bottom: -5px;
   margin-left: -10px;
@@ -54,7 +70,6 @@ body {
   background-color: #F3F3F3;
   border-radius: 10px;
   cursor: pointer;
-  margin-bottom: 15px;
   min-height: 50px;
 }
 
@@ -107,6 +122,39 @@ body {
     max-width: 200px;
     width: 200px !important;
   }
+
+  .scoreBoard{
+    margin-left: 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    width: 100vw;
+    background-color: white;
+    border: none;
+    height: 25px;
+    margin-left: -50px;
+  }
+
+  .scoreBoard .col {
+    padding-left: 50px;
+    padding-right: 0px;
+  }
+
+  .titleBoard {
+    margin-top: 0px;
+  }
+  .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .gameBoard {
+    margin-bottom: 30px;
+  }
+
+  .wordCard {
+    padding: 5px 10px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -142,3 +190,8 @@ a:link {
   align-items: center;
 }
 
+.loadingDiv {
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+}

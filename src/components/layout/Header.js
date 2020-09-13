@@ -6,6 +6,8 @@ export default function Header(props) {
     /* Close/hide the sidenav */
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("scoreBoardId").style.display = "block";
+
     }
 
     return (
