@@ -5,13 +5,15 @@ import Header from './components/layout/Header';
 import MainMenu from './MainMenu';
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
+import { isMobile } from 'react-device-detect';
+
 
 function App() {
   return (
     <DndProvider backend={HTML5Backend}>
       <Router>
         <div className="App">
-          <Header />
+          <Header isMobile={isMobile} />
           <div className="container mx-auto">
             <Route path="/game" exact component={Word} />
             <Route path="/" exact component={MainMenu} />
