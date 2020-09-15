@@ -27,22 +27,38 @@ export const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
-  
+
     return result;
-  };
-  
-  /**
-   * Moves an item from one list to another list.
-   */
+};
+
+/**
+ * Moves an item from one list to another list.
+ */
 export const move = (source, destination, droppableSource, droppableDestination) => {
     const sourceClone = Array.from(source);
     const destClone = Array.from(destination);
     const [removed] = sourceClone.splice(droppableSource.index, 1);
     destClone.splice(droppableDestination.index, 0, removed);
-  
+
     const result = {};
     result[droppableSource.droppableId] = sourceClone;
     result[droppableDestination.droppableId] = destClone;
-  
+
     return result;
-  };
+};
+
+export const calculateTimeLeft = (time) => {
+    let timeLeft = {};
+    if (time > 0) {
+        let divisor_for_minutes = time % (60 * 60);
+        let min = Math.floor(divisor_for_minutes / 60);
+
+        let divisor_for_seconds = divisor_for_minutes % 60;
+        let sec = Math.ceil(divisor_for_seconds);
+        timeLeft = {
+            m: min,
+            s: sec
+        };
+    }
+    return timeLeft;
+}
