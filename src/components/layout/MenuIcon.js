@@ -14,7 +14,7 @@ export default function MenuIcon() {
     }
 
     return (
-        <span class="navbar-toggler-icon" onClick={openNav} style={{ marginLeft: 10,top: 5, left: 0, position:"absolute"}}>
+        <span className="navbar-toggler-icon" onClick={openNav} style={{ marginLeft: 10,top: 5, left: 0, position:"absolute"}}>
             <FontAwesomeIcon icon={faBars} size={"2x"}/>
         </span>
     )

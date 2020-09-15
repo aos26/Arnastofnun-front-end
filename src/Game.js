@@ -100,6 +100,9 @@ export default function Word(props) {
   }
 
   useEffect(() => {
+    if(sessionStorage.getItem("gameLoaded") === "true" && words === []) {
+      return;
+    }
     setIsLoading(true);
     axios
       .get("https://vast-inlet-60629.herokuapp.com/words/5")
@@ -116,7 +119,7 @@ export default function Word(props) {
         setShuffledWords(shuffle(shuffledWords));
         setAnswerArray([false, false, false, false, false])
         setIsLoading(false);
-
+        sessionStorage.setItem("gameLoaded", "true");
       })
       .catch((err) => console.log(err));
   }, []);
