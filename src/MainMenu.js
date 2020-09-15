@@ -3,10 +3,6 @@ import { isMobile } from 'react-device-detect';
 
 export default function MainMenu() {
 
-    useEffect(() => {
-        sessionStorage.setItem("gameLoaded", "false");
-    })
-
     return (
         <div className="container">
             <div className="row">

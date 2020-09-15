@@ -18,6 +18,7 @@ export default function Word(props) {
   const [answerArray, setAnswerArray] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [time, setTime] = useState(0);
+  const [isLandscape, setIsLandscape] = useState(false);
 
   function onDragEnd(result) {
     const { source, destination } = result;
@@ -100,9 +101,9 @@ export default function Word(props) {
   }
 
   useEffect(() => {
-    if(sessionStorage.getItem("gameLoaded") === "true" && words === []) {
+    /*if(sessionStorage.getItem("gameLoaded") === "true" && words === []) {
       return;
-    }
+    }*/
     setIsLoading(true);
     axios
       .get("https://vast-inlet-60629.herokuapp.com/words/5")
@@ -119,16 +120,25 @@ export default function Word(props) {
         setShuffledWords(shuffle(shuffledWords));
         setAnswerArray([false, false, false, false, false])
         setIsLoading(false);
-        sessionStorage.setItem("gameLoaded", "true");
+        if(window.innerHeight < window.innerWidth){
+          setIsLandscape(true);
+        }
       })
       .catch((err) => console.log(err));
   }, []);
 
+  window.addEventListener('resize', function(){
+    if(window.innerHeight < window.innerWidth){
+      setIsLandscape(true);
+    } else {
+      setIsLandscape(false);
+    }
+  },false);
 
   return (
     <div>
       {
-        !props.isLandscape && isMobile ?
+        !isLandscape && isMobile ?
           <div>
             <MenuIcon />
             <div className="container mx-auto mt-5"><h3>Vinsamlegast snúðu símanum á hlið.</h3></div>

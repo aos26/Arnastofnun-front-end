@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { isMobile } from 'react-device-detect';
 import MenuIcon from './components/layout/MenuIcon';
 
 export default function About() {
+
+    
     return (
         <div className="container">
             {isMobile ? <MenuIcon /> :
