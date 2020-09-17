@@ -20,6 +20,23 @@ body {
 
 }
 
+.backgroundWinner {
+
+  background-image: url("https://res.cloudinary.com/aosg26/image/upload/v1600284473/jason-leung-Xaanw0s0pMk-unsplash_pszter.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.gameoverContainer {
+  text-align: center;
+}
+
+.shareContainer {
+  margin-top: 15px;
+  height: 100px;
+}
+
 .flexbox .board {
   display: flex;
   flex-direction: column;
@@ -147,8 +164,8 @@ body {
     margin-top: 0px;
   }
   .container {
-    padding-left: 0px;
-    padding-right: 0px;
+    /*padding-left: 0px;
+    padding-right: 0px;*/
   }
 
   .gameBoard {

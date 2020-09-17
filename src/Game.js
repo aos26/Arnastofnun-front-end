@@ -8,6 +8,7 @@ import MenuIcon from "./components/layout/MenuIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
+import GameOver from "./GameOver";
 
 
 export default function Word(props) {
@@ -81,7 +82,7 @@ export default function Word(props) {
     });
 
   async function resetGame() {
-    setIsLoading(true);
+    //setIsLoading(true);
     axios
       .get("https://vast-inlet-60629.herokuapp.com/words/5")
       .then((res) => {
@@ -96,7 +97,7 @@ export default function Word(props) {
 
         setShuffledWords(shuffle(shuffledWords));
         setAnswerArray([false, false, false, false, false]);
-        setIsLoading(false);
+        //setIsLoading(false);
 
       })
       .catch((err) => console.log(err))
@@ -130,7 +131,9 @@ export default function Word(props) {
    * Timer
    */
   useEffect(() => {
-    console.log(timeLeft)
+    if(isLoading) {
+      return;
+    }
     if (timeLeft < 0){
       setGameOver(true); // Fara yfir á GAME OVER síðuna.
       setTimeComponents([]);
@@ -168,6 +171,7 @@ export default function Word(props) {
   return (
     <div>
       {
+        gameOver ? <GameOver right={rightAnswer} wrong={wrongAnswer}/> :
         !isLandscape && isMobile ?
           <div>
             <MenuIcon />
@@ -191,7 +195,7 @@ export default function Word(props) {
                   </div>
                   <div className="col">
                     <h3>
-                      <FontAwesomeIcon icon={faStopwatch} /> Tími: {timeComponents.length ? timeComponents : "Tími búinn!"}
+                      <FontAwesomeIcon icon={faStopwatch} /> Tími: {timeComponents.length ? timeComponents : "búinn!"}
                     </h3>
                   </div>
                 </div>
