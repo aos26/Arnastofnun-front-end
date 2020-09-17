@@ -28,6 +28,15 @@ body {
   background-size: cover;
 }
 
+.gameoverContainer {
+  text-align: center;
+}
+
+.shareContainer {
+  margin-top: 15px;
+  height: 100px;
+}
+
 .flexbox .board {
   display: flex;
   flex-direction: column;
@@ -155,8 +164,8 @@ body {
     margin-top: 0px;
   }
   .container {
-    padding-left: 0px;
-    padding-right: 0px;
+    /*padding-left: 0px;
+    padding-right: 0px;*/
   }
 
   .gameBoard {

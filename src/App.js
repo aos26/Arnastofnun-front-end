@@ -7,7 +7,6 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import About from './About';
 import { isMobile } from 'react-device-detect';
-import GameOver from './GameOver';
 
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
             <Route path="/game" exact component={() => <Word />} />
             <Route path="/" exact component={MainMenu} />
             <Route path="/about" exact component={About} />
-            <Route path="/gameover" exact component={GameOver} />
           </div>
         </div>
       </Router>
