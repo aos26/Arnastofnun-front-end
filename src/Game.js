@@ -75,14 +75,15 @@ export default function Word(props) {
       background: isDraggingOver ? "#2D6FCB" : "#3CA5C5",
       padding: isMobile ? 5 : 15,
       width: "100%",
-      maxWidth: isMobile ? 200 : 300,
-      minHeight: 50,
-      marginBottom: 10,
+      maxWidth: isDraggingOver && isMobile ? 200 : isMobile ? 200 : 300,
+      minHeight: isMobile ? 50 : 100,
+      maxHeight: isDraggingOver ? 150 : 300,
+      marginBottom: isMobile ? 10 : 20,
       borderRadius: 3,
     });
 
   async function resetGame() {
-    //setIsLoading(true);
+    setIsLoading(true);
     axios
       .get("https://vast-inlet-60629.herokuapp.com/words/5")
       .then((res) => {
@@ -97,7 +98,7 @@ export default function Word(props) {
 
         setShuffledWords(shuffle(shuffledWords));
         setAnswerArray([false, false, false, false, false]);
-        //setIsLoading(false);
+        setIsLoading(false);
 
       })
       .catch((err) => console.log(err))
