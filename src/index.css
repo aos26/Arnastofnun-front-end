@@ -26,10 +26,19 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  height: 100vh;
 }
 
 .gameoverContainer {
   text-align: center;
+  color: #f3f3f3;
+}
+
+.centerGameOver {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
 }
 
 .shareContainer {
@@ -130,11 +139,13 @@ body {
   .flexbox .board {
     padding: 5px;
     min-height: 50px;
+    max-width: 200px;
   }
   .flexbox .board .card {
     max-height: 75px;
     padding: 5px 10px;
     overflow: auto;
+    word-break: break-word;
     margin-bottom: 0px;
   }
 
@@ -154,6 +165,9 @@ body {
     height: 25px;
     margin-left: -50px;
   }
+  .centerGameOver{
+    margin-top: 0px;
+  }
 
   .scoreBoard .col {
     padding-left: 50px;
@@ -163,10 +177,7 @@ body {
   .titleBoard {
     margin-top: 0px;
   }
-  .container {
-    /*padding-left: 0px;
-    padding-right: 0px;*/
-  }
+  
 
   .gameBoard {
     margin-bottom: 30px;
@@ -174,6 +185,8 @@ body {
 
   .wordCard {
     padding: 5px 10px;
+    word-break: break-word;
+    overflow: auto;
   }
 }
 
@@ -185,8 +198,18 @@ body {
     width: auto !important;
   }
   .container {
-    padding-left: 25px;
-    padding-right: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .flexbox .board {
+    max-width: 150px;
   }
 }
 
