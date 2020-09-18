@@ -76,7 +76,7 @@ export default function Word(props) {
       padding: isMobile ? 5 : 15,
       width: "100%",
       maxWidth: isDraggingOver && isMobile ? 200 : isMobile ? 200 : 300,
-      minHeight: isMobile ? 50 : 100,
+      minHeight: isMobile ? 50 : 75,
       maxHeight: isDraggingOver ? 150 : 300,
       marginBottom: isMobile ? 10 : 20,
       borderRadius: 3,

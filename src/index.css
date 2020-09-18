@@ -17,7 +17,24 @@ body {
   overflow: hidden;
 
   padding: 0 15px 15px 15px;
+}
 
+@media only screen and (max-height: 750px) {
+  .flexbox {
+    height: 120vh;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .flexbox {
+    height: 140vh;
+  }
+}
+
+@media only screen and (max-height: 550px) {
+  .flexbox {
+    height: 160vh;
+  }
 }
 
 .backgroundWinner {
@@ -97,6 +114,8 @@ body {
   border-radius: 10px;
   cursor: pointer;
   min-height: 50px;
+  max-height: 200px;
+  overflow: auto;
 }
 
 .wrong {
