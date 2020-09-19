@@ -83,7 +83,6 @@ export default function Word(props) {
     });
 
   async function resetGame() {
-    setIsLoading(true);
     axios
       .get("https://vast-inlet-60629.herokuapp.com/words/5")
       .then((res) => {
@@ -98,8 +97,6 @@ export default function Word(props) {
 
         setShuffledWords(shuffle(shuffledWords));
         setAnswerArray([false, false, false, false, false]);
-        setIsLoading(false);
-
       })
       .catch((err) => console.log(err))
   }
@@ -121,6 +118,7 @@ export default function Word(props) {
         setShuffledWords(shuffle(shuffledWords));
         setAnswerArray([false, false, false, false, false])
         setIsLoading(false);
+
         if (window.innerHeight < window.innerWidth) {
           setIsLandscape(true);
         }
@@ -132,15 +130,16 @@ export default function Word(props) {
    * Timer
    */
   useEffect(() => {
-    if(isLoading) {
+
+    if(isLoading){
       return;
     }
+
     if (timeLeft < 0){
       setGameOver(true); // Fara yfir á GAME OVER síðuna.
       setTimeComponents([]);
       return;
     } 
-
     const intervalId = setInterval(() => {
       setTimeLeft(timeLeft - 1);
       const timer = calculateTimeLeft(timeLeft);
