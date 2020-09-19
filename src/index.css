@@ -23,6 +23,13 @@ body {
   .flexbox {
     height: 120vh;
   }
+  .flexbox .board{
+    padding: 10px !important;
+    min-height: 50px !important;
+  }
+  .flexbox .board .card {
+    padding: 5px 15px !important;
+  }
 }
 
 @media only screen and (max-height: 600px) {

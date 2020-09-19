@@ -18,7 +18,7 @@ export default function Word(props) {
   const [wrongAnswer, setWrongAnswer] = useState(0);
   const [answerArray, setAnswerArray] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(300);
+  const [timeLeft, setTimeLeft] = useState(180);
   const [timeComponents, setTimeComponents] = useState([[]]);
   const [isLandscape, setIsLandscape] = useState(false);
   const [gameOver, setGameOver] = useState(false);
