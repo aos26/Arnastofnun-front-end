@@ -15,7 +15,7 @@ export default function GameOver(props) {
                 <div className="col">
                     <div className="gameoverContainer">
                         <h1>Tími búinn!</h1>
-                        <h2>Þú náðir {props.right} / {props.wrong + props.right} orðskýringum réttum</h2>
+                        <h2>Þú náðir {props.right} af {props.wrong + props.right} orðskýringum réttum</h2>
                         
                         <h3 style={{color: "#d4af37"}} ><FontAwesomeIcon icon={faTrophy}  size={"4x"} /></h3>
                     </div>
