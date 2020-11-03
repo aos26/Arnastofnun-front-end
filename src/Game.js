@@ -142,6 +142,8 @@ export default function Word(props) {
     }
     const intervalId = setInterval(() => {
       setTimeLeft(timeLeft - 1);
+
+	  document.getElementById('timeBackground').style.opacity = timeLeft/180;
       const timer = calculateTimeLeft(timeLeft);
       const temp = [];
       Object.keys(timer).forEach((interval) => {
@@ -169,7 +171,7 @@ export default function Word(props) {
   }, false);
 
   return (
-    <div>
+    <div className="main-content">
       {
         gameOver ? <GameOver right={rightAnswer} wrong={wrongAnswer}/> :
         !isLandscape && isMobile ?

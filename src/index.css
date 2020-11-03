@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
 	height: 100%;
+
+	overflow: hidden;
 }
 
 body {
-	height: 100%;
-
 	background-color: #f3f3f3;
 
 	font-family: 'Roboto', sans-serif;
@@ -23,6 +23,11 @@ body {
 
 .App.front {
 	max-width: 5000px;
+}
+
+.main-content {
+	max-height: 100vh;
+	overflow: auto;
 }
 
 .app-background {
@@ -40,6 +45,15 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ce7ca', endColorstr='#d3af73',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 	transition: all 200ms ease-in-out;
+}
+
+.app-background.red-blue {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d874d7+0,7db9e8+100 */
+	background: #d874d7; /* Old browsers */
+	background: -moz-linear-gradient(45deg,  #d874d7 0%, #7db9e8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg,  #d874d7 0%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg,  #d874d7 0%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d874d7', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .col {

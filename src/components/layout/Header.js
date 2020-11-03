@@ -4,7 +4,7 @@ import gameLogo from '../../game-logo.png';
 import samLogo from '../../sam-logo.png';
 
 export default function Header(props) {
-	return <div class="header">
+	return <div className="header">
 		<div className="w-100 text-center">
 			<img className="game-logo" src={gameLogo} />
 			<br/>
