@@ -4,8 +4,86 @@
   box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
 body {
-  background-color: #f3f3f3;
+	height: 100%;
+
+	background-color: #f3f3f3;
+
+	font-family: 'Roboto', sans-serif;
+}
+
+.App {
+	position: relative;
+	max-width: 1500px;
+}
+
+.App.front {
+	max-width: 5000px;
+}
+
+.app-background {
+	position: absolute;
+
+	top: 0;
+	width: 33.333333%;
+	bottom: 0;
+
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#6ce7ca+0,d3af73+100 */
+	background: #6ce7ca; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #6ce7ca 0%, #d3af73 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #6ce7ca 0%,#d3af73 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #6ce7ca 0%,#d3af73 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ce7ca', endColorstr='#d3af73',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	transition: all 200ms ease-in-out;
+}
+
+.col {
+	transition: all 200ms ease-in-out;
+}
+
+.front .app-background {
+	width: 100%;
+}
+
+.header {
+	display: flex;
+
+	position: relative;
+
+	height: 100%;
+
+	align-items: center;
+
+	justify-content: center;
+}
+
+.front .header:after {
+	content: " ";
+
+	display: block;
+
+	height: 60%;
+	max-height: 500px;
+
+    margin-right: -20px;
+
+    border-right: 1px solid #ffffffab;
+}
+
+.header .game-logo {
+	width: 200px;
+	max-width: 50%;
+	min-width: 100px;
+}
+
+.header .sam-logo {
+	margin-top: 100px;
+	max-width: 140px;
 }
 
 .flexbox {
@@ -84,13 +162,21 @@ body {
 }
 
 .scoreBoard {
-  height: 50px;
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: -15px;
   padding-left: 15px;
+}
+
+.scoreBoard h3 {
+	color: #d8911b;
+	font-weight: 100;
+}
+
+.scoreBoard h3 strong {
+	color: #66c6a1;
+	font-weight: 400;
 }
 
 .titleBoard {
@@ -252,6 +338,8 @@ body {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  border-color: transparent;
+  background: #ffffff47;
 }
 a:link {
   text-decoration: none;
