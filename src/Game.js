@@ -19,7 +19,7 @@ export default function Word(props) {
   const [score, setScore] = useState(0);
   const [answerArray, setAnswerArray] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(180);
+  const [timeLeft, setTimeLeft] = useState(10);
   const [timeComponents, setTimeComponents] = useState([[]]);
   const [isLandscape, setIsLandscape] = useState(false);
   const [gameOver, setGameOver] = useState(false);
@@ -84,9 +84,9 @@ export default function Word(props) {
       width: "100%",
       minWidth: isMobile ? 250 : 300,
       maxWidth: isDraggingOver && isMobile ? 250 : isMobile ? 250 : 300,
-      minHeight: 120,
-      height: 120,
-      maxHeight: 120,
+      minHeight: isMobile ? 100 : 120,
+      height: isMobile ? 100 : 120,
+      maxHeight: isMobile ? 100 : 120,
       marginBottom: isMobile ? 10 : 20,
       borderRadius: 3,
     });

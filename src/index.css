@@ -212,7 +212,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .shareContainer {
@@ -230,7 +230,7 @@ body {
   background-color: #3ca5c5;
   padding: 15px;
 
-  min-height: 110px;
+  min-height: 100px;
   margin-bottom: 10px;
 }
 
@@ -278,8 +278,8 @@ body {
   background-color: #f3f3f3;
   border-radius: 10px;
   cursor: pointer;
-  min-height: 100px;
-  max-height: 100px;
+  min-height: 90px;
+  max-height: 90px;
   overflow: auto;
 }
 
