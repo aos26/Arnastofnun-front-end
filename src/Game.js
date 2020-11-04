@@ -146,9 +146,11 @@ export default function Word(props) {
       setGameOver(true); // Fara yfir á GAME OVER síðuna.
       setTimeComponents([]);
       return;
-    } 
+    }
     const intervalId = setInterval(() => {
       setTimeLeft(timeLeft - 1);
+
+	  document.getElementById('timeBackground').style.opacity = timeLeft/180;
       const timer = calculateTimeLeft(timeLeft);
       const temp = [];
       Object.keys(timer).forEach((interval) => {
@@ -176,7 +178,7 @@ export default function Word(props) {
   }, false);
 
   return (
-    <div>
+    <div className="main-content">
       {
         gameOver ? <GameOver score={score} right={rightAnswer} wrong={wrongAnswer}/> :
         !isLandscape && isMobile ?
@@ -192,17 +194,17 @@ export default function Word(props) {
                 <div className="row ">
                   <div className="col">
                     <h3>
-                      Rétt svör: {rightAnswer}
+                      <strong>Rétt svör</strong> {rightAnswer}
                     </h3>
                   </div>
                   <div className="col">
                     <h3>
-                      Röng svör: {wrongAnswer}
+                      <strong>Röng svör</strong> {wrongAnswer}
                     </h3>
                   </div>
                   <div className="col">
                     <h3>
-                      <FontAwesomeIcon icon={faStopwatch} /> Tími: {timeComponents.length ? timeComponents : "búinn!"}
+                      {/*<FontAwesomeIcon icon={faStopwatch} />*/} <strong>Tími</strong> {timeComponents.length ? timeComponents : "búinn!"}
                     </h3>
                   </div>
                 </div>

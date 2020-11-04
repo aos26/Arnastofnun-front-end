@@ -1,6 +1,19 @@
 import React from 'react'
 
+import gameLogo from '../../game-logo.png';
+import samLogo from '../../sam-logo.png';
+
 export default function Header(props) {
+	return <div className="header">
+		<div className="w-100 text-center">
+			<img className="game-logo" src={gameLogo} />
+			<br/>
+			<a href="http://arnastofnun.is"><img className="sam-logo" src={samLogo} /></a>
+		</div>
+	</div>;
+}
+
+function _Header(props) {
 
 
     /* Close/hide the sidenav */
