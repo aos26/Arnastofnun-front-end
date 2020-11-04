@@ -79,7 +79,7 @@ function GameOverForm(props) {
                     </div>
                 </div>
                 <div className="form-group">
-                    <label className="my-1 mr-2" htmlFor="schoolInput">Veldu skóla</label>
+                    <label className="my-1 mr-2" htmlFor="schoolInput">Skóli</label>
                     <input type="text" className="form-control" id="schoolInput" placeholder="" onChange={event => setSchool(event.target.value)} required></input>
                     
                     {/*<select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" required>
