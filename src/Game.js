@@ -79,7 +79,7 @@ export default function Word(props) {
 
   const getListStyle = (isDraggingOver, i, isMobile) => (
     {
-      background: isDraggingOver ? "#2D6FCB" : "#3CA5C5",
+      background: isDraggingOver ? "#379571" : "#66c6a1",
       padding: isMobile ? 5 : 15,
       width: "100%",
       minWidth: isMobile ? 250 : 300,
