@@ -82,9 +82,10 @@ export default function Word(props) {
       background: isDraggingOver ? "#2D6FCB" : "#3CA5C5",
       padding: isMobile ? 5 : 15,
       width: "100%",
-      maxWidth: isDraggingOver && isMobile ? 200 : isMobile ? 200 : 300,
-      minHeight: isMobile ? 50 : 75,
-      maxHeight: isDraggingOver ? 50 : 300,
+      minWidth: isMobile ? 250 : 300,
+      maxWidth: isDraggingOver && isMobile ? 250 : isMobile ? 250 : 300,
+      minHeight: isMobile ? 110 : 110,
+      maxHeight: isDraggingOver ? 110 : 110,
       marginBottom: isMobile ? 10 : 20,
       borderRadius: 3,
     });
@@ -183,12 +184,12 @@ export default function Word(props) {
         gameOver ? <GameOver score={score} right={rightAnswer} wrong={wrongAnswer}/> :
         !isLandscape && isMobile ?
           <div>
-            <MenuIcon />
+            {/*<MenuIcon /> */}
             <div className="container mx-auto mt-5"><h3>Vinsamlegast snúðu símanum á hlið.</h3></div>
           </div> :
           <div className="container">
-            {isMobile ? <MenuIcon /> :
-              null}
+            {/*{isMobile ? <MenuIcon /> :
+              null} */}
             <div className="flexbox">
               <div className="scoreBoard" id="scoreBoardId">
                 <div className="row ">
@@ -257,7 +258,7 @@ export default function Word(props) {
                                   id={item.id}
                                   key={item.id}
                                   className="card"
-                                  style={{ background: item.isRight ? "green" : "" }}
+                                  style={{ background: item.isRight ? "green" : "", minHeight: item.isRight ? "75px" : "" , maxHeight: item.isRight ? "75px" : "" }}
                                 >
                                   <p>{capitalize(item.texti)}</p>
                                 </div>

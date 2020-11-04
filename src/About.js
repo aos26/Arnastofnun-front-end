@@ -7,8 +7,8 @@ export default function About() {
     
     return (
         <div className="container">
-            {isMobile ? <MenuIcon /> :
-                null}
+            {/*{isMobile ? <MenuIcon /> :
+                null} */}
             <div className="flexbox">
                 <div className="row">
                     <div className="col" style={{ marginTop: isMobile ? 30 : 100, marginLeft: isMobile ? 0 : 100, marginRight: isMobile ? 0 : 100}}>

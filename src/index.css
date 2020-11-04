@@ -64,10 +64,19 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d874d7', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
+@media only screen and (min-width: 1600px) {
+  .app-background {
+		top: 0;
+		width: 33.33333% !important;
+		height: auto;
+		bottom: 0;
+	}
+}
+
 @media only screen and (min-width: 768px) {
 	.app-background {
 		top: 0;
-		width: 33.333333%;
+		width: 16.6666667%;
 		height: auto;
 		bottom: 0;
 	}
@@ -195,7 +204,7 @@ body {
 .gameoverContainer {
   margin-top: 20px;
   text-align: center;
-  color: #f3f3f3;
+  color: #212529;
   width: 500px;
 }
 
@@ -265,12 +274,12 @@ body {
   border-radius: 10px;
 }
 .flexbox .board .card {
-  padding: 15px 25px;
+  padding: 10px 15px;
   background-color: #f3f3f3;
   border-radius: 10px;
   cursor: pointer;
-  min-height: 50px;
-  max-height: 200px;
+  min-height: 110px;
+  max-height: 110px;
   overflow: auto;
 }
 
