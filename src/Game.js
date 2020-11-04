@@ -14,8 +14,9 @@ import GameOver from "./GameOver";
 export default function Word(props) {
   const [words, setWords] = useState([]);
   const [shuffledWords, setShuffledWords] = useState([]);
-  const [rightAnswer, setRightAnswer] = useState(0);
-  const [wrongAnswer, setWrongAnswer] = useState(0);
+  const [rightAnswer, setRightAnswer] = useState(0); 
+  const [wrongAnswer, setWrongAnswer] = useState(0); 
+  const [score, setScore] = useState(0);
   const [answerArray, setAnswerArray] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [timeLeft, setTimeLeft] = useState(180);
@@ -44,18 +45,24 @@ export default function Word(props) {
       newWords[sInd] = items;
       setWords(newWords);
     } else {
-      if (cardSource.id === cardTarget.id) {
+      if (cardSource.id === cardTarget.id) { //Rétt svar
         cardSource.isRight = true;
         const newRightAnswer = rightAnswer + 1
         setRightAnswer(newRightAnswer);
+        const newScore = score + 100;
+        setScore(newScore);
         const result = move(words[sInd], words[dInd], source, destination);
         const newWords = [...words];
         newWords[sInd] = result[sInd];
         newWords[dInd] = result[dInd];
         setWords(newWords);
-      } else {
+      } else { // Rangt svar
         const newWrongAnswer = wrongAnswer + 1
         setWrongAnswer(newWrongAnswer);
+        if(score > 0) {
+          const newScore = score - 50;
+          setScore(newScore);
+        }
         let newAnswerArray = [...answerArray];
         const index = dInd - 1;
         newAnswerArray[index] = true;
@@ -77,7 +84,7 @@ export default function Word(props) {
       width: "100%",
       maxWidth: isDraggingOver && isMobile ? 200 : isMobile ? 200 : 300,
       minHeight: isMobile ? 50 : 75,
-      maxHeight: isDraggingOver ? 150 : 300,
+      maxHeight: isDraggingOver ? 50 : 300,
       marginBottom: isMobile ? 10 : 20,
       borderRadius: 3,
     });
@@ -171,7 +178,7 @@ export default function Word(props) {
   return (
     <div>
       {
-        gameOver ? <GameOver right={rightAnswer} wrong={wrongAnswer}/> :
+        gameOver ? <GameOver score={score} right={rightAnswer} wrong={wrongAnswer}/> :
         !isLandscape && isMobile ?
           <div>
             <MenuIcon />
