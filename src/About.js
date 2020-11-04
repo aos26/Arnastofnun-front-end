@@ -28,7 +28,7 @@ export default function About() {
                         </p>
                         </div>
                         <div className="homeButton">
-                            <a href="/" class="btn btn-info btn-lg">Aftur á forsíðu</a>
+                            <a href="/" class="btn buttonGreen btn-lg">Aftur á forsíðu</a>
                         </div>
                     </div>
                 </div>

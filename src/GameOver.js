@@ -29,7 +29,7 @@ export default function GameOver(props) {
                     }
                     
                     <div className="gameoverContainer">
-                        <a href="/game" className="btn btn-info btn-lg">Spila aftur?</a>
+                        <a href="/game" className="btn buttonGreen btn-lg">Spila aftur?</a>
                     </div>
                     <div className="gameoverContainer shareContainer">
                         <FacebookShareButton

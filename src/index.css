@@ -234,6 +234,10 @@ body {
   margin-bottom: 10px;
 }
 
+.buttonGreen {
+  background-color: #379571;
+}
+
 .scoreBoard {
   width: 100%;
   margin-top: 20px;
