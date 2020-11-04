@@ -84,8 +84,9 @@ export default function Word(props) {
       width: "100%",
       minWidth: isMobile ? 250 : 300,
       maxWidth: isDraggingOver && isMobile ? 250 : isMobile ? 250 : 300,
-      minHeight: 110,
-      maxHeight: 110,
+      minHeight: 120,
+      height: 120,
+      maxHeight: 120,
       marginBottom: isMobile ? 10 : 20,
       borderRadius: 3,
     });
