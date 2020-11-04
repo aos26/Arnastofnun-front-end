@@ -6,10 +6,10 @@ import GameOverForm from './components/layout/GameOverForm';
 
 export default function GameOver(props) {
 
-    useEffect(() => {
+    /*useEffect(() => {
         const test = document.getElementsByClassName("App");
         test[0].classList.add("backgroundWinner");
-    })
+    })*/
     return (
         <div className="container centerGameOver">
             <div className="row">
@@ -34,7 +34,7 @@ export default function GameOver(props) {
                     <div className="gameoverContainer shareContainer">
                         <FacebookShareButton
                             url="https://arnastofnun-leikur.herokuapp.com/"
-                            quote={"Ég náði " + props.right + " af " + (props.wrong + props.right) + " orðskýringum réttum!" }
+                            quote={"Ég fékk " + props.score + " stig!" }
                             hashtag="#árnastofnun"
                             >
                             <FacebookIcon round={false} size={"48px"}/>
