@@ -84,8 +84,8 @@ export default function Word(props) {
       width: "100%",
       minWidth: isMobile ? 250 : 300,
       maxWidth: isDraggingOver && isMobile ? 250 : isMobile ? 250 : 300,
-      minHeight: isMobile ? 110 : 110,
-      maxHeight: isDraggingOver ? 110 : 110,
+      minHeight: 110,
+      maxHeight: 110,
       marginBottom: isMobile ? 10 : 20,
       borderRadius: 3,
     });
@@ -258,7 +258,7 @@ export default function Word(props) {
                                   id={item.id}
                                   key={item.id}
                                   className="card"
-                                  style={{ background: item.isRight ? "green" : "", minHeight: item.isRight ? "75px" : "" , maxHeight: item.isRight ? "75px" : "" }}
+                                  style={{ background: item.isRight ? "green" : "", minHeight: item.isRight ? "65px" : "" , maxHeight: item.isRight ? "65px" : "" }}
                                 >
                                   <p>{capitalize(item.texti)}</p>
                                 </div>
