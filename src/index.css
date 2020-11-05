@@ -67,7 +67,7 @@ body {
 @media only screen and (min-width: 1600px) {
   .app-background {
 		top: 0;
-		width: 33.33333% !important;
+		width: 16.6666667%;
 		height: auto;
 		bottom: 0;
 	}
@@ -170,7 +170,7 @@ body {
 
 @media only screen and (max-height: 750px) {
   .flexbox {
-    height: 120vh;
+    height: 140vh;
   }
   .flexbox .board {
     padding: 10px !important;
