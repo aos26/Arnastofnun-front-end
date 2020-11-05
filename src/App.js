@@ -32,10 +32,10 @@ function App() {
 					{/*<Header isMobile={isMobile} />*/}
 					<div className="mx-auto h-100">
 						<div className="row d-flex h-100">
-							<div className={'col-12 h-sm-100'+(isFront ? ' col-md-6' : isMobile ? ' col-md-2' :  ' col-md-4' )}>
+							<div className={'col-12 h-sm-100'+(isFront ? ' col-md-6' : isMobile ? ' col-md-2' :  ' col-md-2' )}>
 								<Header />
 							</div>
-							<div className={'col-12'+(isFront ? ' col-md-6 h-sm-100' : isMobile ? ' col-md-10' :  ' col-md-8')}>
+							<div className={'col-12'+(isFront ? ' col-md-6 h-sm-100' : isMobile ? ' col-md-10' :  ' col-md-10')}>
 								<Route path="/game" exact component={() => <Word />} />
 								<Route path="/" exact component={MainMenu} />
 								<Route path="/about" exact component={About} />

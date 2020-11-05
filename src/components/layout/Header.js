@@ -5,7 +5,7 @@ import samLogo from '../../sam-logo.png';
 
 export default function Header(props) {
 	return <div className="header">
-		<div className="w-100 text-center">
+		<div className="w-100 text-center" style={{marginLeft: "10px"}}>
 			<img className="game-logo" src={gameLogo} />
 			<br/>
 			<a href="http://arnastofnun.is"><img className="sam-logo" src={samLogo} /></a>
