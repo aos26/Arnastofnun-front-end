@@ -24,7 +24,7 @@ function App() {
 
 	return (
 		<DndProvider backend={HTML5Backend}>
-			<Router ref={router}>
+			<Router ref={router} basename="/spagetti/">
 				<div className={'App h-100'+(isFront ? ' front' : '')}>
 
 					<AppBackground />

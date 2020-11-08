@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
 import GameOver from "./GameOver";
-
+import config from "./config";
 
 export default function Word(props) {
   const [words, setWords] = useState([]);
@@ -93,7 +93,7 @@ export default function Word(props) {
 
   async function resetGame() {
     axios
-      .get("https://vast-inlet-60629.herokuapp.com/words/5")
+      .get(config.apiUrl+"/words/5")
       .then((res) => {
         let newWords = res.data.map((obj) => obj);
         newWords.forEach(el => {
@@ -113,7 +113,7 @@ export default function Word(props) {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get("https://vast-inlet-60629.herokuapp.com/words/5")
+      .get(config.apiUrl+"/words/5")
       .then((res) => {
         let newWords = res.data.map((obj) => obj);
         newWords.forEach(el => {

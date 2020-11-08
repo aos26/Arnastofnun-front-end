@@ -33,7 +33,7 @@ export default function GameOver(props) {
                     </div>
                     <div className="gameoverContainer shareContainer">
                         <FacebookShareButton
-                            url="https://arnastofnun-leikur.herokuapp.com/"
+                            url="https://krakkar.arnastofnun.is/spagetti/"
                             quote={"Ég fékk " + props.score + " stig!" }
                             hashtag="#árnastofnun"
                             >

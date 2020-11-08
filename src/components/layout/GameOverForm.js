@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import config from "./../../config";
 
 function GameOverForm(props) {
     const [name, setName] = useState('');
@@ -43,7 +44,7 @@ function GameOverForm(props) {
                 headers: { 'Content-Type': 'application/json' },
                 body: jsonBody
             };
-            fetch(`https://vast-inlet-60629.herokuapp.com/HighScore/`, requestOptions)
+            fetch(config.apiUrl+'/HighScore/', requestOptions)
                 .then(res => {
                     console.log(res)
                     if(res.ok){
