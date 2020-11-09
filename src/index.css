@@ -227,8 +227,7 @@ body {
   width: 100%;
   max-width: 300px;
 
-  background-color: #66c6a1;
-  padding: 15px;
+  padding: 0 15px 15px 0;
 
   min-height: 100px;
   margin-bottom: 10px;
@@ -245,6 +244,7 @@ body {
   margin-bottom: 20px;
   margin-left: -15px;
   padding-left: 15px;
+  border-bottom: 1px solid #66c6a1;
 }
 
 .scoreBoard h3 {
@@ -252,13 +252,17 @@ body {
 	font-weight: 100;
 }
 
-.scoreBoard h3 strong {
+.scoreBoard h3 strong, .titleBoard h3 {
 	color: #66c6a1;
 	font-weight: 400;
 }
 
 .titleBoard {
   margin: 15px 0px;
+}
+
+.titleBoard h3 {
+	font-size: 1.4rem;
 }
 
 .bulletNumber {
@@ -273,24 +277,40 @@ body {
 
 .wordCard {
   padding: 13px 25px;
-  background-color: #f3f3f3;
+  background-color: #74d4c4;
   margin-bottom: 15px;
   min-height: 50px;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 .flexbox .board .card {
   padding: 10px 15px;
-  background-color: #f3f3f3;
-  border-radius: 10px;
+  background-color: #74d4c4;
+  border-radius: 4px;
+  border: none;
   cursor: pointer;
   min-height: 90px;
   max-height: 90px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .wrong {
-  background-color: red !important;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d874d7+0,bc2929+100 */
+	background: #d874d7; /* Old browsers */
+	background: -moz-linear-gradient(0deg,  #d874d7 0%, #bc2929 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(0deg,  #d874d7 0%,#bc2929 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(0deg,  #d874d7 0%,#bc2929 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d874d7', endColorstr='#bc2929',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+.right {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#6ce7ca+0,d3af73+100 */
+	background: #6ce7ca; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #6ce7ca 0%, #d3af73 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #6ce7ca 0%,#d3af73 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #6ce7ca 0%,#d3af73 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ce7ca', endColorstr='#d3af73',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 .flexbox .board .card:hover {
   background-color: gray; /*Breyta um lit hér...*/
 }
@@ -301,6 +321,10 @@ body {
 
 .questions {
   opacity: 1; /* ÞARF AÐ GERA AUGLJÓST AÐ ORÐIN EIGA EKKI AÐ VERA DRAGGABLE */
+}
+
+.questions .board {
+	background: #dbe4db;
 }
 
 .flexbox .skyringar .board {

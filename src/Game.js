@@ -14,8 +14,8 @@ import config from "./config";
 export default function Word(props) {
   const [words, setWords] = useState([]);
   const [shuffledWords, setShuffledWords] = useState([]);
-  const [rightAnswer, setRightAnswer] = useState(0); 
-  const [wrongAnswer, setWrongAnswer] = useState(0); 
+  const [rightAnswer, setRightAnswer] = useState(0);
+  const [wrongAnswer, setWrongAnswer] = useState(0);
   const [score, setScore] = useState(0);
   const [answerArray, setAnswerArray] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -79,7 +79,7 @@ export default function Word(props) {
 
   const getListStyle = (isDraggingOver, i, isMobile) => (
     {
-      background: isDraggingOver ? "#379571" : "#66c6a1",
+      background: isDraggingOver ? "#379571" : null,
       padding: isMobile ? 5 : 15,
       width: "100%",
       minWidth: isMobile ? 250 : 300,
@@ -217,28 +217,15 @@ export default function Word(props) {
                     <h3>Orð</h3>
                   </div>
                   <div className="col">
-                    <h3>Svar</h3>
-                  </div>
-                  <div className="col">
                     <h3>Skýringar</h3>
                   </div>
                 </div>
               </div>
               <div className="row gameBoard">
                 {isLoading ? <div className="loadingDiv">Sæki orðin <FontAwesomeIcon icon={faSpinner} spin /></div> : null}
-                <div className="col">
-                  <div className="board questions">
-                    {shuffledWords.map((ord, i) => (
-                      <div className="wordCard" id={"ord" + ord.id} key={ord.id}>
-                        <div>
-                          {i + 1}. {capitalize(ord.ord)}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+
                 <DragDropContext onDragEnd={onDragEnd}>
-                  <div className="col">
+                  <div className="col questions">
                     {words.map((ord, i) => (
                       i !== 0 ?
 
@@ -247,19 +234,19 @@ export default function Word(props) {
 
                             <div
                               ref={provided.innerRef}
-                              style={getListStyle(snapshot.isDraggingOver, i--, isMobile)}
+                              style={getListStyle(snapshot.isDraggingOver, i-1, isMobile)}
                               {...provided.droppableProps}
                               className={answerArray[provided.droppableProps["data-rbd-droppable-id"] - 1] ? "wrong" : "board"}
                             >
                               <div style={{ marginTop: -5 }}>
-                                {provided.droppableProps["data-rbd-droppable-id"]}
+                                {provided.droppableProps["data-rbd-droppable-id"]}. {shuffledWords[i-1] ? shuffledWords[i-1].ord : ''}
                               </div>
                               {ord.map((item, i) => (
                                 <div
                                   id={item.id}
                                   key={item.id}
-                                  className="card"
-                                  style={{ background: item.isRight ? "green" : "", minHeight: item.isRight ? "65px" : "" , maxHeight: item.isRight ? "65px" : "" }}
+                                  className={'card'+(item.isRight ? ' right' : '')}
+                                  style={{ minHeight: item.isRight ? "65px" : "" , maxHeight: item.isRight ? "65px" : "" }}
                                 >
                                   <p>{capitalize(item.texti)}</p>
                                 </div>

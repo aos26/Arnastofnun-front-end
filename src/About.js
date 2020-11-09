@@ -4,7 +4,7 @@ import MenuIcon from './components/layout/MenuIcon';
 
 export default function About() {
 
-    
+
     return (
         <div className="container">
             {/*{isMobile ? <MenuIcon /> :
@@ -13,13 +13,13 @@ export default function About() {
                 <div className="row">
                     <div className="col" style={{ marginTop: isMobile ? 30 : 100, marginLeft: isMobile ? 0 : 100, marginRight: isMobile ? 0 : 100}}>
                         <div>
-                            <h1>Markmið leiksins</h1>
+                            <h2>Markmið leiksins</h2>
                             <p>Svaraðu eins mörgum orðskýringum og þú getur þangað til tíminn rennur út með því að draga
                             orðskýringu í dálk sem samsvarar réttu orði.
                         </p>
                         </div>
                         <div >
-                            <h1>Hvernig á að spila</h1>
+                            <h2>Hvernig á að spila</h2>
                             <p>Vinstra megin á síðunni birtist dálkur með orðum og hægra megin birtist dálkur með orðskýringum.
                             Á milli þeirra birtist tómur dálkur. Dragðu orðskýringu yfir í miðju dálkinn í reitinn með sömu tölu
                             og orðið sem skýringin á við til þess að vinna inn stig. Ef dregið er að vitlausu orði er ekki hægt
