@@ -21,8 +21,7 @@ export default function About() {
 						<div >
                             <h3>Hvernig á að spila</h3>
                             <p>Vinstra megin á síðunni birtist dálkur með orðum og hægra megin dálkur með orðskýringum.
-                            Á milli þeirra birtist tómur dálkur. Dragðu orðskýringu yfir í miðjudálkinn í reit með sömu tölu
-                            og orðið sem skýringin á við til þess að vinna inn stig. Ef dregið er að vitlausu orði er ekki hægt
+                            Dragðu orðskýringu yfir á orðið sem skýringin á við til þess að vinna inn stig. Ef dregið er að vitlausu orði er ekki hægt
                             að giska á skýringu á því orði aftur. Fimm orð og orðskýringar birtast í senn. Haldið er utan um rétt og röng svör og má sjá fjölda þeirra
                             fyrir ofan dálkana. Þegar giskað hefur verið á öll fimm orðin birtast fimm ný orð þangað til tíminn rennur út.
                         </p>

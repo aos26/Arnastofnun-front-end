@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/spagetti/static/css/main.09c047b7.chunk.css",
-    "main.js": "/spagetti/static/js/main.4e7bb0fa.chunk.js",
-    "main.js.map": "/spagetti/static/js/main.4e7bb0fa.chunk.js.map",
+    "main.js": "/spagetti/static/js/main.3b6ee4cc.chunk.js",
+    "main.js.map": "/spagetti/static/js/main.3b6ee4cc.chunk.js.map",
     "runtime-main.js": "/spagetti/static/js/runtime-main.d0b3976f.js",
     "runtime-main.js.map": "/spagetti/static/js/runtime-main.d0b3976f.js.map",
     "static/js/2.5d374ef5.chunk.js": "/spagetti/static/js/2.5d374ef5.chunk.js",
     "static/js/2.5d374ef5.chunk.js.map": "/spagetti/static/js/2.5d374ef5.chunk.js.map",
     "index.html": "/spagetti/index.html",
-    "precache-manifest.25200a7283f601b1d3eaed79115306ef.js": "/spagetti/precache-manifest.25200a7283f601b1d3eaed79115306ef.js",
+    "precache-manifest.8a5b878bd73d19f29d2efd4ec381ab00.js": "/spagetti/precache-manifest.8a5b878bd73d19f29d2efd4ec381ab00.js",
     "service-worker.js": "/spagetti/service-worker.js",
     "static/css/main.09c047b7.chunk.css.map": "/spagetti/static/css/main.09c047b7.chunk.css.map",
     "static/js/2.5d374ef5.chunk.js.LICENSE.txt": "/spagetti/static/js/2.5d374ef5.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.d0b3976f.js",
     "static/js/2.5d374ef5.chunk.js",
     "static/css/main.09c047b7.chunk.css",
-    "static/js/main.4e7bb0fa.chunk.js"
+    "static/js/main.3b6ee4cc.chunk.js"
   ]
 }

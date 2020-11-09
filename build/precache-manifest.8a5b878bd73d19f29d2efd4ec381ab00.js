@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "721df194366004c6414eff8665588a73",
+    "revision": "73afd5db1f051a401e2803e3ab851498",
     "url": "/spagetti/index.html"
   },
   {
-    "revision": "65602f16f2bb89a61d47",
+    "revision": "fb19319811d1cf5b5b0c",
     "url": "/spagetti/static/css/main.09c047b7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spagetti/static/js/2.5d374ef5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "65602f16f2bb89a61d47",
-    "url": "/spagetti/static/js/main.4e7bb0fa.chunk.js"
+    "revision": "fb19319811d1cf5b5b0c",
+    "url": "/spagetti/static/js/main.3b6ee4cc.chunk.js"
   },
   {
     "revision": "7b692bae73712f1359cf",
