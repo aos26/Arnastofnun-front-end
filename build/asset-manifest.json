@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/spagetti/static/css/main.09c047b7.chunk.css",
+    "main.js": "/spagetti/static/js/main.4e7bb0fa.chunk.js",
+    "main.js.map": "/spagetti/static/js/main.4e7bb0fa.chunk.js.map",
+    "runtime-main.js": "/spagetti/static/js/runtime-main.d0b3976f.js",
+    "runtime-main.js.map": "/spagetti/static/js/runtime-main.d0b3976f.js.map",
+    "static/js/2.5d374ef5.chunk.js": "/spagetti/static/js/2.5d374ef5.chunk.js",
+    "static/js/2.5d374ef5.chunk.js.map": "/spagetti/static/js/2.5d374ef5.chunk.js.map",
+    "index.html": "/spagetti/index.html",
+    "precache-manifest.25200a7283f601b1d3eaed79115306ef.js": "/spagetti/precache-manifest.25200a7283f601b1d3eaed79115306ef.js",
+    "service-worker.js": "/spagetti/service-worker.js",
+    "static/css/main.09c047b7.chunk.css.map": "/spagetti/static/css/main.09c047b7.chunk.css.map",
+    "static/js/2.5d374ef5.chunk.js.LICENSE.txt": "/spagetti/static/js/2.5d374ef5.chunk.js.LICENSE.txt",
+    "static/media/game-logo.png": "/spagetti/static/media/game-logo.6cc74d3a.png",
+    "static/media/sam-logo.png": "/spagetti/static/media/sam-logo.e0f7f8a8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0b3976f.js",
+    "static/js/2.5d374ef5.chunk.js",
+    "static/css/main.09c047b7.chunk.css",
+    "static/js/main.4e7bb0fa.chunk.js"
+  ]
+}
