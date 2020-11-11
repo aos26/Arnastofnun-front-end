@@ -7,8 +7,6 @@ export default function Header(props) {
 	return <div className="header">
 		<div className="w-100 text-center" style={{marginLeft: "10px"}}>
 			<a href="/spagetti"><img className="game-logo" src={gameLogo} /></a>
-			<br/>
-			<a href="http://arnastofnun.is"><img className="sam-logo" src={samLogo} /></a>
 		</div>
 	</div>;
 }
